@@ -1,0 +1,37 @@
+@font-face {
+  font-family: "Open Sans";
+  font-style: "normal";
+  font-display: swap;
+  font-weight: 700;
+  src:  local("OpenSansBold"),
+        local("Open Sans Bold"),
+        url("../fonts/opensansbold.woff") format("woff"),
+        url("../fonts/opensansbold.woff2") format("woff2");
+}
+
+
+.page-body {
+  padding: 0;
+  margin: 0;
+
+  font-family: _____________;
+  font-size: _________;
+  line-height: ___________;
+  font-weight: _________;
+  color: ___________;
+
+  background-color: _____________;
+}
+
+*, *::before, *::after {
+box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
