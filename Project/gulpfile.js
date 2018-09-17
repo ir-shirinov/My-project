@@ -1,6 +1,5 @@
 "use strict";
 
-
 var autoprefixer = require("autoprefixer");
 var browserSync = require("browser-sync").create();
 var del = require("del");
@@ -53,6 +52,7 @@ var path = {
 gulp.task("server", function() {
   browserSync.init({
     server: path.site,
+    index: 'index.min.html',
     notify: false,
     open: true,
     cors: true,
@@ -63,7 +63,7 @@ gulp.task("server", function() {
 
   gulp.watch(path.watch.style, ["style"]);
   gulp.watch(path.watch.html, ["html"]);
-  gulp.watch(path.watch.js, ["js", "compress"]).on("change", browserSync.reload);
+  gulp.watch(path.watch.js, ["js", "compressjs"]).on("change", browserSync.reload);
   gulp.watch(path.watch.img, ["copy"]).on("change", browserSync.reload);
 });
 
@@ -198,7 +198,7 @@ gulp.task("build", function(done) {
   );
 });
 
-gulp.task("imagemin", function(done){
+gulp.task("img", function(done){
   run(
     "images",
     "webp",
@@ -206,7 +206,7 @@ gulp.task("imagemin", function(done){
   );
 });
 
-gulp.task("imagemin-compression", function(done){
+gulp.task("img-zip", function(done){
   run(
     "images-compression",
     "webp",
